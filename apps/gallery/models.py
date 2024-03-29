@@ -7,11 +7,15 @@ from apps.accounts.models import User
 # Create your models here.
 
 
-
 class Media(BaseModel):
     class MediaType(models.TextChoices):
         IMAGE = "IMG", _("Image")
         VIDEO = "VID", _("Video")
+
+    class FormatType(models.TextChoices):
+        JPEG = "JPEG", _("JPEG")
+        PNG = "PNG", _("PNG")
+        MP4 = "MP4", _("MP4")
 
     name = models.CharField(max_length=100)
     slug = AutoSlugField(populate_from="name", unique=True, always_update=True)
@@ -20,8 +24,10 @@ class Media(BaseModel):
     media_type = models.CharField(
         max_length=3, choices=MediaType.choices, default=MediaType.IMAGE
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    dimensions = models.CharField(max_length=50, blank=True, null=True)
+    format = models.CharField(
+        max_length=4, choices=FormatType.choices, default=FormatType.JPEG
+    )
 
     def __str__(self):
         return self.name

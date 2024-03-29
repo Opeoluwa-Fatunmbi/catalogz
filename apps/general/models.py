@@ -17,7 +17,9 @@ class SiteDetail(BaseModel):
     maps_url = models.URLField(
         default="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
     )
-
+    site = models.URLField(
+        verbose_name=_("Company Site"), default="https://www.catalogz.com/"
+    )
     fb = models.URLField(verbose_name=_("Facebook"), default="https://www.facebook.com")
     ig = models.URLField(
         verbose_name=_("Instagram"), default="https://www.instagram.com/"
@@ -36,9 +38,7 @@ class SiteDetail(BaseModel):
         return super(SiteDetail, self).save(*args, **kwargs)
 
 
-
 class TeamMember(BaseModel):
-
     class Role(models.TextChoices):
         CEO = "Chief Executive Officer", _("Chief Executive Officer")
         CMO = "Chief Marketing Officer", _("Chief Marketing Officer")
