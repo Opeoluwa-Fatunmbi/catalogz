@@ -43,7 +43,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "apps.accounts",
     "apps.common",
-    "apps.profiles",
+    "apps.gallery",
     "apps.general",
 ]
 
