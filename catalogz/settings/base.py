@@ -56,6 +56,24 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 AUTH_USER_MODEL = "accounts.User"
 
+CORS_ALLOW_HEADERS = (
+    "x-requested-with",
+    "content-type",
+    "accept",
+    "origin",
+    "authorization",
+    "guestuserid",
+    "accept-encoding",
+    "access-control-allow-origin",
+    "content-disposition",
+)
+
+CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS").split(" ")
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = ("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+
+
 SITE_ID = 1
 
 MIDDLEWARE = [
@@ -160,3 +178,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+
