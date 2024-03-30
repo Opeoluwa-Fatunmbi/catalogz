@@ -19,4 +19,3 @@ class HomeView(View):
             "media": media,
         }
         return render(request, "gallery/home.html", context)
-
