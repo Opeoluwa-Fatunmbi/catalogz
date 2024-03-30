@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "catalogz/wsgi.py",
+            "src": "catalogz/asgi.py",
             "use": "@vercel/python",
             "config": {
                 "runtime": "python3.9",
@@ -13,7 +13,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "catalogz/wsgi.py"
+            "dest": "catalogz/asgi.py"
         }
     ]
 }
