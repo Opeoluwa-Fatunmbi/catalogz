@@ -42,6 +42,21 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-4" href="contact.html">Contact</a>
                 </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    {% url 'register' as register_url %}
+                    <li class="nav-item {% if request.path == register_url %}active{% endif %}">
+                      <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+
+                    {% url 'login' as login_url %}
+                    <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                      <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
             </ul>
             </div>
         </div>
