@@ -1,5 +1,5 @@
 """
-WSGI config for clothing_store project.
+WSGI config for catalogz project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
