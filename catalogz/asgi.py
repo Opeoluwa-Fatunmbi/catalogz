@@ -1,5 +1,5 @@
 """
-ASGI config for clothing_store project.
+ASGI config for catalogz project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
